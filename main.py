@@ -81,6 +81,12 @@ class LinkedList:
             current=current.next
         return current
             
+    def set_value(self,index,value):
+        temp=self.get(index)
+        if temp:
+            temp.value=value
+            return True
+        return False
                 
                         
         
@@ -95,4 +101,5 @@ print(linked_list)
 linked_list.insert(2,20)
 print(linked_list)
 # linked_list.traverse()
-print(linked_list.get(-3))
+print(linked_list.set_value(-2,90))
+print(linked_list)
