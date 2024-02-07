@@ -130,6 +130,11 @@ class LinkedList:
         popped_node.next=None
         self.length-=1
         return popped_node
+    
+    def delete_all(self):
+        self.head=None
+        self.tail=None
+        self.length=0
                 
                         
         
@@ -146,6 +151,6 @@ print(linked_list)
 # linked_list.traverse()
 # print(linked_list.set_value(-2,90))
 # print(linked_list.pop_first())
-print(linked_list.remove(-1))
-
+# print(linked_list.remove(-1))
+linked_list.delete_all()
 print(linked_list)
