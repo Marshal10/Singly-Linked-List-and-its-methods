@@ -60,6 +60,17 @@ class LinkedList:
         while temp_node is not None:
             print(temp_node.value)
             temp_node=temp_node.next
+            
+    def search(self,target):
+        current=self.head
+        index=0
+        while current:
+            if current.value==target:
+                return index
+            current=current.next
+            index+=1
+        return -1
+            
                 
                         
         
@@ -73,4 +84,5 @@ linked_list.append(50)
 print(linked_list)
 linked_list.insert(2,20)
 print(linked_list)
-linked_list.traverse()
+# linked_list.traverse()
+print(linked_list.search(50))
