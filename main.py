@@ -39,6 +39,21 @@ class LinkedList:
             self.head=new_node
         self.length+=1
         
+    def insert(self,index,value):
+        new_node=Node(value)
+        if self.head is None:
+            self.head=new_node
+            self.tail=new_node
+        elif index==0:
+            new_node.next=self.head
+            self.head=new_node
+        else:
+            temp_node=self.head
+            for _ in range(index-1):
+                temp_node=temp_node.next
+            new_node.next=temp_node.next
+            temp_node.next=new_node
+        self.length+=1        
                         
         
 linked_list=LinkedList()
@@ -48,5 +63,6 @@ linked_list=LinkedList()
 linked_list.prepend(40)
 linked_list.prepend(10)
 linked_list.append(50)
-
+print(linked_list)
+linked_list.insert(2,20)
 print(linked_list)
