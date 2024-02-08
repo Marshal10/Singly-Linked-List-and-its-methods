@@ -135,7 +135,18 @@ class LinkedList:
         self.head=None
         self.tail=None
         self.length=0
-                
+        
+    def reverse(self):
+        prev_node=None
+        current=self.head
+        while current is not None:
+            next_node=current.next
+            current.next=prev_node
+            prev_node=current
+            current=next_node
+        self.head,self.tail=self.tail,self.head
+        
+                            
                         
         
 linked_list=LinkedList()
@@ -152,5 +163,7 @@ print(linked_list)
 # print(linked_list.set_value(-2,90))
 # print(linked_list.pop_first())
 # print(linked_list.remove(-1))
-linked_list.delete_all()
+# linked_list.delete_all()
+# print(linked_list)
+linked_list.reverse()
 print(linked_list)
