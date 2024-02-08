@@ -154,6 +154,18 @@ class LinkedList:
             i=self.length//2
             middle=self.get(i)
         return middle.value
+    
+    def remove_duplicates(self):
+        current=self.head
+        result=[]
+        while current:
+            if current.value not in result:
+                result.append(current.value)
+            current=current.next
+        self.delete_all()
+        for num in result:
+            self.append(num)
+            
         
                             
                         
@@ -162,10 +174,12 @@ linked_list=LinkedList()
 # linked_list.append(10)
 # linked_list.append(20)
 # linked_list.append(30)
-linked_list.prepend(40)
-linked_list.prepend(10)
-linked_list.append(50)
-linked_list.append(70)
+linked_list.prepend(1)
+linked_list.append(2)
+linked_list.append(4)
+linked_list.append(3)
+linked_list.append(4)
+linked_list.append(2)
 print(linked_list)
 # linked_list.insert(2,20)
 # print(linked_list)
@@ -177,4 +191,6 @@ print(linked_list)
 # print(linked_list)
 # linked_list.reverse()
 # print(linked_list)
-print(linked_list.find_middle())
+# print(linked_list.find_middle())
+linked_list.remove_duplicates()
+print(linked_list)
