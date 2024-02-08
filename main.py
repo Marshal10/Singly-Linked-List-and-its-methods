@@ -146,6 +146,15 @@ class LinkedList:
             current=next_node
         self.head,self.tail=self.tail,self.head
         
+    def find_middle(self):
+        if self.length%2==0:
+            i=self.length//2
+            middle=self.get(i)
+        else:
+            i=self.length//2
+            middle=self.get(i)
+        return middle.value
+        
                             
                         
         
@@ -156,6 +165,7 @@ linked_list=LinkedList()
 linked_list.prepend(40)
 linked_list.prepend(10)
 linked_list.append(50)
+linked_list.append(70)
 print(linked_list)
 # linked_list.insert(2,20)
 # print(linked_list)
@@ -165,5 +175,6 @@ print(linked_list)
 # print(linked_list.remove(-1))
 # linked_list.delete_all()
 # print(linked_list)
-linked_list.reverse()
-print(linked_list)
+# linked_list.reverse()
+# print(linked_list)
+print(linked_list.find_middle())
